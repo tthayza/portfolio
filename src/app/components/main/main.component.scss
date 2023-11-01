@@ -1,0 +1,71 @@
+.profile {
+  height: 100%;
+  width: 50vw;
+}
+
+.profile-img {
+  width: 100%;
+  object-fit: cover;
+}
+
+
+@media only screen and (max-width: 767px) and (min-width: 200px) {
+  .profile {
+    height: 60vw;
+    width: 60vw;
+  }
+  .profile .profile-img {
+    height: 65vw;
+  }
+  }
+
+@media (min-width: 768px) {
+  .profile {
+    height: 50vw;
+    width: 50vw;
+  }
+  .profile .profile-img {
+    height: 55vw;
+  }
+
+}
+@media (min-width: 992px) {
+  .profile {
+    height: 40vw;
+    width: 40vw;
+  }
+  .profile .profile-img {
+    height: 45vw;
+  }
+
+}
+@media (min-width: 1200px) {
+  .profile {
+    height: 35vw;
+    width: 35vw;
+  }
+  .profile .profile-img {
+    height: 100%;
+  }
+}
+
+.btn-resume {
+  background-color: #7c0a43;
+  color: #f7f7f7;
+ &:hover {
+  background-color: #f7f7f7;
+  border: 1px solid #2a0664;
+  color:#2a0664;
+}
+}
+
+.btn-projects{
+  outline: #7c0a43 1px solid;
+  color: #7c0a43;
+
+  &:hover {
+    background-color: #2a0664;
+    color:#f7f7f7;
+  }
+}
+

@@ -72,3 +72,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   $bs-code-color: #e21e80;
   $bs-highlight-bg: #fff3cd;
 
+
+
+.bg-gradient-primary-to-secondary {
+  background: #7c0a43;
+  background: linear-gradient(135deg, #2a0664 0%, #611c3f 100%);
+}
+
+.text-gradient {
+  background: -webkit-linear-gradient(315deg, #3c0c8a 0%, #7c0a43 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
