@@ -1,7 +1,7 @@
 @import '../../../styles.scss';
 
-footer >p {
-  color: $secondary-color;
+footer > p {
+  color: $medium-pink;
 }
 
 .icon {
@@ -14,7 +14,6 @@ footer >p {
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease;
-  background: linear-gradient(45deg, $primary-color, $secondary-color, $tertiary-color);
 
   &:hover {
     transform: scale(1.1);

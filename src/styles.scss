@@ -4,20 +4,69 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+$light-ice: #ebd4cc;
+$light-pink: #DA9F93;
+$medium-pink: #B6465F;
+$dark-pink: #8A0638;
+$dark-purple: #1a1016;
+$primary-wine: #3b0125;
+$secondary-wine: #2b031c;
+$gray-pink: #84455b;
 
- $primary-color:#611c3f;
- $secondary-color:#7c0a43;
- $tertiary-color: #2a0664;
-
-
-
-.bg-gradient-primary-to-secondary {
-  background: $secondary-color;
-  background: linear-gradient(135deg, $tertiary-color 0%, $primary-color 100%);
+.dark-theme {
+  background-color: $dark-purple;
+  color: $light-pink;
 }
 
+.text-dark-theme {
+  color: $light-ice !important;
+}
+
+.text-light-theme {
+  color: $gray-pink !important;
+}
+
+.bg-gradient-dark-theme{
+  background: linear-gradient(135deg, $medium-pink 50%, $light-ice 100%);
+  text-shadow: 1px 5px 10px rgba(183, 136, 159, 0.1), 2px 1px 2px rgba(209, 153, 172, 0.5);
+}
+.bg-gradient-light-theme{
+  background: linear-gradient(135deg, $dark-pink 20%, $light-pink 60%);
+  text-shadow: -1px -1px 10px rgba(133, 7, 76, 0.1), 1px 1px 1px rgba(47, 2, 17, 0.5);
+}
+
+
 .text-gradient {
-  background: -webkit-linear-gradient(315deg, #3c0c8a 0%, $secondary-color 100%);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.text-gradient-light-theme {
+  background: -webkit-linear-gradient(315deg, #3c0c8a 0%,
+  $dark-pink 100%);
+}
+.text-gradient-dark-theme {
+  background: -webkit-linear-gradient(315deg, $dark-pink 0%,
+  $light-ice 100%);
+}
+
+.dark-header, .dark-footer {
+  background-color: $primary-wine !important;
+}
+
+.light-header, .light-footer {
+  background-color: $light-pink !important;
+}
+
+.btn-navbar-border-dark-theme {
+ border: 1px solid $light-ice !important;
+}
+.btn-navbar-border-light-theme {
+  border: 1px solid $gray-pink !important ;
+}
+.btn-navbar-img-dark-theme {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(130, 69, 90)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+.btn-navbar-img-light-theme {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(235, 212, 204)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }

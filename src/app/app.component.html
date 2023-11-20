@@ -1,5 +1,10 @@
-<app-header class="flex-shrink-0"></app-header>
+<app-header
+  class="flex-shrink-0"
+  (changeTheme)="toggleTheme()"
+  [currentIcon]="currentIcon"
+  [currentTheme]="currentTheme"
+></app-header>
 
-<app-main></app-main>
+<app-main [currentTheme]="currentTheme"></app-main>
 
-<app-footer></app-footer>
+<app-footer [currentTheme]="currentTheme"></app-footer>

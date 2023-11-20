@@ -1,3 +1,4 @@
+@import '../../../styles.scss';
 .profile {
   height: 100%;
   width: 50vw;
@@ -7,6 +8,14 @@
   width: 100%;
   object-fit: cover;
 }
+
+.dark-theme-main {
+  background-color: $dark-purple;
+}
+.light-theme-main {
+  background-color: $light-ice;
+}
+
 
 
 @media only screen and (max-width: 767px) and (min-width: 200px) {
@@ -49,23 +58,4 @@
   }
 }
 
-.btn-resume {
-  background-color: #7c0a43;
-  color: #f7f7f7;
- &:hover {
-  background-color: #f7f7f7;
-  border: 1px solid #2a0664;
-  color:#2a0664;
-}
-}
-
-.btn-projects{
-  outline: #7c0a43 1px solid;
-  color: #7c0a43;
-
-  &:hover {
-    background-color: #2a0664;
-    color:#f7f7f7;
-  }
-}
 
