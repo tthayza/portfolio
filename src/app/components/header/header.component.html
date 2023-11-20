@@ -1,9 +1,81 @@
 <header [ngClass]="[currentTheme === 'dark' ? 'dark-header' : 'light-header']">
   <nav
-    class="navbar navbar-expand-lg navbar-light bg-light py-3"
+    class="navbar navbar-expand-lg navbar-light py-3 px-4 d-flex justify-content-around"
     [ngClass]="[currentTheme === 'dark' ? 'dark-header' : 'light-header']"
   >
-    <div class="container px-5">
+    <a
+      [ngClass]="
+        currentTheme === 'dark' ? 'text-dark-theme' : 'text-light-theme'
+      "
+      class="navbar-brand"
+      href="index.html"
+      ><span class="fw-bold fs-1">Thayza Oliveira</span></a
+    >
+    <div class="m-0 d-flex justify-content-between">
+      <div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          [ngClass]="
+            currentTheme === 'dark'
+              ? '.btn-navbar-border-dark-theme '
+              : '.btn-navbar-border-light-theme '
+          "
+        >
+          <span
+            class="navbar-toggler-icon"
+            [ngClass]="
+              currentTheme === 'dark'
+                ? '.btn-navbar-img-dark-theme '
+                : '.btn-navbar-img-light-theme '
+            "
+          ></span>
+        </button>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-semibold">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="index.html"
+                [ngClass]="
+                  currentTheme === 'dark'
+                    ? 'text-dark-theme'
+                    : 'text-light-theme'
+                "
+                >Página Inicial</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="projects.html"
+                [ngClass]="
+                  currentTheme === 'dark'
+                    ? 'text-dark-theme'
+                    : 'text-light-theme'
+                "
+                >Projetos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="contact.html"
+                [ngClass]="
+                  currentTheme === 'dark'
+                    ? 'text-dark-theme'
+                    : 'text-light-theme'
+                "
+                >Contato</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
       <button type="button" class="btn btn-theme" (click)="emitChangeTheme()">
         <lucide-angular
           name="{{ currentIcon }}"
@@ -13,70 +85,6 @@
           "
         ></lucide-angular>
       </button>
-      <a
-        [ngClass]="
-          currentTheme === 'dark' ? 'text-dark-theme' : 'text-light-theme'
-        "
-        class="navbar-brand"
-        href="index.html"
-        ><span class="fw-bold fs-1">Thayza Oliveira</span></a
-      >
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        [ngClass]="
-          currentTheme === 'dark'
-            ? '.btn-navbar-border-dark-theme '
-            : '.btn-navbar-border-light-theme '
-        "
-      >
-        <span
-          class="navbar-toggler-icon"
-          [ngClass]="
-            currentTheme === 'dark'
-              ? '.btn-navbar-img-dark-theme '
-              : '.btn-navbar-img-light-theme '
-          "
-        ></span>
-      </button>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-semibold">
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              href="index.html"
-              [ngClass]="
-                currentTheme === 'dark' ? 'text-dark-theme' : 'text-light-theme'
-              "
-              >Página Inicial</a
-            >
-          </li>
-
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              href="projects.html"
-              [ngClass]="
-                currentTheme === 'dark' ? 'text-dark-theme' : 'text-light-theme'
-              "
-              >Projetos</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              href="contact.html"
-              [ngClass]="
-                currentTheme === 'dark' ? 'text-dark-theme' : 'text-light-theme'
-              "
-              >Contato</a
-            >
-          </li>
-        </ul>
-      </div>
     </div>
   </nav>
 </header>
