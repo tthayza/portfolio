@@ -1,0 +1,26 @@
+<header>
+  <a>
+    <img src="{{ imgLogo }}" />
+  </a>
+  <ul class="menu-list" *ngIf="!isMobile">
+    @for (item of headerElements; track 0) {
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <button class="menu-toggle" *ngIf="isMobile" (click)="toggleMenu()">
+    <img src="{{ menuHamburguer }}" class="hamburger-icon" />
+  </button>
+  <div
+    class="menu-modal"
+    [ngClass]="{ show: showModal }"
+    *ngIf="isMobile && showModal"
+  >
+    <button class="close-button" (click)="toggleMenu()">&times;</button>
+    <ul>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/about">About</a></li>
+      <li><a routerLink="/services">Services</a></li>
+      <li><a routerLink="/contact">Contact</a></li>
+    </ul>
+  </div>
+</header>

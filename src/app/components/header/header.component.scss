@@ -1,0 +1,137 @@
+@import "../../../styles.scss";
+$breakpoint-tablet: 768px;
+
+header {
+  width: 91vw;
+  margin: 0 6rem;
+  @include side-border;
+  a img {
+    width: 7.8rem;
+  }
+  ul {
+    @include alignment(center);
+    gap: 2rem;
+    li {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+
+  li {
+    margin-right: 20px;
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .menu-list {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    .hamburger-icon {
+      width: 25px;
+      transition: all 0.3s ease;
+
+      &::before,
+      &::after {
+        content: "";
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        display: block;
+        position: absolute;
+        transition: all 0.3s ease;
+      }
+
+      &::before {
+        top: -8px;
+      }
+
+      &::after {
+        top: 8px;
+      }
+    }
+  }
+}
+
+.menu-modal {
+  display: none;
+  position: fixed;
+  top: 2rem;
+  right: 10rem;
+  background: rgba(19, 18, 18, 0.7);
+  z-index: 1000;
+  border-radius: 0.4rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 20rem;
+  max-height: 50vh;
+  overflow-y: hidden;
+  padding: 20px;
+
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+
+    li {
+      margin: 0.1rem 0;
+      display: block;
+
+      a {
+        text-decoration: none;
+        color: #f9f4f0;
+        font-size: 18px;
+        display: block;
+        padding: 10px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        &:hover {
+          color: #efc356;
+        }
+      }
+    }
+  }
+
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #efc356;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #f9f4f0;
+    }
+  }
+}
+
+.menu-modal.show {
+  display: block;
+  transform: translateY(0);
+}

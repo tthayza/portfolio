@@ -1,0 +1,118 @@
+@import "../../../styles.scss";
+.banner {
+  padding: 2rem 4rem;
+  margin-right: 4.8rem;
+  @include side-border;
+  @include flex-align-justify(center, space-evenly);
+
+  .infos {
+    width: 60%;
+    @include justifying(space-between);
+    flex-direction: column;
+    gap: 2rem;
+
+    .heading {
+      @include alignment(center);
+      gap: 1rem;
+
+      .dash {
+        @include dash;
+      }
+    }
+
+    p {
+      width: 100%;
+      color: #686665;
+      font-size: 1.6rem;
+    }
+
+    .name {
+      position: relative;
+      width: fit-content;
+      height: fit-content;
+      padding: 1.8rem;
+      border: 2px solid #333;
+      border: solid #686665 0.2rem;
+
+      h3 {
+        font-family: "Lato";
+        font-size: 5rem;
+        font-weight: 700;
+      }
+
+      .retangulo {
+        position: absolute;
+        width: 18px;
+        height: 24px;
+        background-color: #efc356;
+        border: solid #686665 0.2rem;
+      }
+
+      .canto-superior-esquerdo {
+        top: -10px;
+        left: -8px;
+      }
+
+      .canto-superior-direito {
+        top: -10px;
+        right: -8px;
+      }
+
+      .canto-inferior-esquerdo {
+        bottom: -10px;
+        left: -8px;
+      }
+
+      .canto-inferior-direito {
+        bottom: -10px;
+        right: -8px;
+      }
+    }
+  }
+
+  figure {
+    border-radius: 50%;
+    width: 450px;
+    height: 550px;
+    padding: 2rem;
+    border: solid #686665 0.09rem;
+    @include flex-align-justify(center, center);
+
+    img {
+      border-radius: inherit;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    margin-right: -1.4rem;
+    flex-direction: column;
+    gap: 2rem;
+    .infos {
+      width: 100%;
+      align-items: center;
+      text-align: center;
+
+      .name {
+        padding: 1rem;
+        border: solid #686665 0.2rem;
+
+        h3 {
+          font-size: 3rem;
+        }
+      }
+    }
+
+    figure {
+      width: 250px;
+      height: 250px;
+      padding: 1rem;
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+}

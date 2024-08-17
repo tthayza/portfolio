@@ -1,0 +1,34 @@
+@mixin alignment($position) {
+  display: flex;
+  align-items: $position;
+}
+@mixin justifying($position) {
+  display: flex;
+  justify-content: $position;
+}
+@mixin flex-align-justify($align, $justify) {
+  @include alignment($align);
+  justify-content: $justify;
+}
+@mixin dash {
+  height: 0.2rem;
+  width: 3.2rem;
+  background-color: #333333;
+}
+@mixin side-border {
+  margin: 0 6rem;
+  border-left: rgba(104, 102, 101, 0.2) 0.1rem solid;
+  border-right: rgba(104, 102, 101, 0.2) 0.1rem solid;
+  @include flex-align-justify(center, space-around);
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: -6rem;
+    right: -6rem;
+    height: 0.1rem;
+    background-color: rgba(104, 102, 101, 0.2);
+    z-index: -1;
+  }
+}
