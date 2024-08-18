@@ -1,0 +1,27 @@
+<section class="projects">
+  <app-heading textContent="Projects"></app-heading>
+  <div class="wrapper-projects">
+    <h3>
+      Projects and <br />
+      practice
+    </h3>
+    <div class="card-listing">
+      <div class="card" *ngFor="let project of projectsList">
+        <b>{{ project?.id }}</b>
+        <h5>{{ project?.title }}</h5>
+        <div class="tags">
+          @for (tag of project?.tags; track $index) {
+
+          <app-tag [tag]="tag"></app-tag>
+          }
+        </div>
+        <img src="{{ project?.image }}" />
+        <app-button textBtn="Ver projeto"></app-button>
+      </div>
+    </div>
+    <!-- @for (project of projectsList; track 1) {
+
+      <app-project-card [dataProject]="project"></app-project-card>
+      } -->
+  </div>
+</section>

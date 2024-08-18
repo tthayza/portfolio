@@ -1,24 +1,17 @@
 @import "../../../styles.scss";
 .banner {
   padding: 2rem 4rem;
-  margin-right: 4.8rem;
+  margin-right: 3.1% !important;
   @include side-border;
   @include flex-align-justify(center, space-evenly);
+  background-color: $mediumWhite;
+  animation: fromTop 2s forwards;
 
   .infos {
     width: 60%;
     @include justifying(space-between);
     flex-direction: column;
     gap: 2rem;
-
-    .heading {
-      @include alignment(center);
-      gap: 1rem;
-
-      .dash {
-        @include dash;
-      }
-    }
 
     p {
       width: 100%;
@@ -85,9 +78,9 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1109px) {
     padding: 1rem;
-    margin-right: -1.4rem;
+    margin-right: 3% !important;
     flex-direction: column;
     gap: 2rem;
     .infos {
@@ -114,5 +107,16 @@
         height: 100%;
       }
     }
+  }
+}
+
+@keyframes fromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

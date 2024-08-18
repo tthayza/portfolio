@@ -1,0 +1,9 @@
+@import "../../../styles.scss";
+p {
+  border: $mediumGray 0.1rem solid;
+  padding: 0.4rem 1.2rem;
+  width: fit-content;
+  font-size: 1.4rem;
+  color: $mediumGray;
+  border-radius: 3.2rem;
+}

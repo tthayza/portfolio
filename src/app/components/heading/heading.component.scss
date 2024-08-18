@@ -1,0 +1,9 @@
+@import "../../../styles.scss";
+.heading {
+  @include alignment(center);
+  gap: 1rem;
+
+  .dash {
+    @include dash;
+  }
+}

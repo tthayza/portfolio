@@ -2,33 +2,19 @@
 $breakpoint-tablet: 768px;
 
 header {
-  width: 91vw;
-  margin: 0 6rem;
   @include side-border;
+
+  background-color: $mediumWhite;
   a img {
     width: 7.8rem;
+    animation: fromLeft 1s forwards 0.4s;
   }
   ul {
     @include alignment(center);
     gap: 2rem;
+    animation: fromLeft 2s forwards 0.6s;
     li {
       font-size: 1.2rem;
-    }
-  }
-}
-
-.menu-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-
-  li {
-    margin-right: 20px;
-
-    a {
-      text-decoration: none;
-      color: #333;
     }
   }
 }
@@ -90,7 +76,6 @@ header {
   ul {
     list-style: none;
     padding: 0;
-    margin: 0;
     display: flex;
     flex-direction: column;
 
@@ -134,4 +119,15 @@ header {
 .menu-modal.show {
   display: block;
   transform: translateY(0);
+}
+
+@keyframes fromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(20rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

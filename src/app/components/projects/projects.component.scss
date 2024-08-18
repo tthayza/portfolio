@@ -1,0 +1,64 @@
+@import "../../../styles.scss";
+.projects {
+  @include side-border;
+  display: flex;
+  flex-direction: column;
+  align-items: first baseline;
+  padding: 2rem 10rem;
+  .wrapper-projects {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .card-listing {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 2rem;
+
+    @media (max-width: 1024px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 2rem;
+      width: fit-content;
+      height: fit-content;
+      padding: 2.6rem;
+      display: flex;
+      gap: 0.8rem;
+      flex-direction: column;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transform: translateY(20px);
+      transition: transform 0.3s ease;
+      animation: fadeInUp 0.5s ease-out forwards;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+      .tags {
+        @include alignment(center);
+        gap: 0.8rem;
+      }
+      img {
+        border-radius: 2rem;
+      }
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

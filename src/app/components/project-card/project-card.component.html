@@ -1,0 +1,12 @@
+<div class="project">
+  <b>{{ dataProject?.id }}</b>
+  <h5>{{ dataProject?.title }}</h5>
+  <div class="tags">
+    @for (tag of dataProject?.tags; track $index) {
+
+    <app-tag [tag]="tag"></app-tag>
+    }
+  </div>
+  <img src="{{ dataProject?.image }}" />
+  <app-button textBtn="Ver projeto"></app-button>
+</div>

@@ -16,19 +16,20 @@
   background-color: #333333;
 }
 @mixin side-border {
-  margin: 0 6rem;
+  margin-left: 6rem;
+  margin-right: 3.1%;
   border-left: rgba(104, 102, 101, 0.2) 0.1rem solid;
   border-right: rgba(104, 102, 101, 0.2) 0.1rem solid;
   @include flex-align-justify(center, space-around);
   position: relative;
-  &::before {
+  &::after {
     content: "";
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     left: -6rem;
-    right: -6rem;
-    height: 0.1rem;
+    width: 100vw;
+    height: 0.2rem;
     background-color: rgba(104, 102, 101, 0.2);
-    z-index: -1;
+    z-index: 1;
   }
 }

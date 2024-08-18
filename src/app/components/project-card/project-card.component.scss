@@ -1,0 +1,31 @@
+@import "../../../styles.scss";
+.project {
+  background-color: white;
+  border-radius: 2rem;
+  width: fit-content;
+  height: fit-content;
+  padding: 2.6rem;
+  display: flex;
+  gap: 0.8rem;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .tags {
+    @include alignment(center);
+    gap: 0.8rem;
+  }
+  img {
+    border-radius: 2rem;
+  }
+}
