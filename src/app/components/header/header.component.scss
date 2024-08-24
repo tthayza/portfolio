@@ -12,9 +12,25 @@ header {
   ul {
     @include alignment(center);
     gap: 2rem;
-    animation: fromLeft 2s forwards 0.6s;
     li {
       font-size: 1.2rem;
+      opacity: 0;
+      transition: transform 0.3s ease;
+      animation: fadeInUp 0.8s ease forwards;
+      &:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+
+      &:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      &:nth-child(4) {
+        animation-delay: 0.4s;
+      }
     }
   }
 }
@@ -82,6 +98,23 @@ header {
     li {
       margin: 0.1rem 0;
       display: block;
+      opacity: 0;
+      transition: transform 0.3s ease;
+      animation: fromLeft 0.1s ease-in forwards;
+      &:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+
+      &:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      &:nth-child(4) {
+        animation-delay: 0.4s;
+      }
 
       a {
         text-decoration: none;
@@ -125,6 +158,16 @@ header {
   0% {
     opacity: 0;
     transform: translateX(20rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-20rem);
   }
   100% {
     opacity: 1;
