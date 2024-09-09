@@ -1,0 +1,114 @@
+@import "../../../styles.scss";
+
+.journey {
+  @include side-border;
+  display: flex;
+  flex-direction: column;
+  align-items: first baseline;
+  padding: 2rem 10rem;
+
+  .wrapper-achievements {
+    @include justifying(space-between);
+    width: 100%;
+
+    .left-column {
+      width: 70%;
+
+      .achievement {
+        .heading-achievement {
+          @include alignment(center);
+          gap: 0.8rem;
+
+          b {
+            font-size: 2.4rem;
+          }
+
+          img {
+            width: 2rem;
+          }
+        }
+
+        p {
+          font-size: 1.6rem;
+          font-family: "Lato";
+        }
+      }
+    }
+
+    .right-column {
+      @include flex-align-justify(center, center);
+      width: 35%;
+      img {
+        width: 30rem;
+      }
+    }
+  }
+
+  @media (min-width: 288px) and (max-width: 1024px) {
+    align-items: center;
+    text-align: center;
+
+    .journey {
+      padding: 1rem;
+      margin-right: 3% !important;
+      flex-direction: column;
+      width: 100%;
+      max-width: 30rem;
+    }
+
+    .wrapper-achievements {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 1.6rem;
+
+      .left-column {
+        .achievement {
+          flex-direction: column;
+          @include justifying(center);
+          width: 100%;
+          p {
+            text-align: start;
+            width: 80%;
+          }
+        }
+      }
+
+      .left-column,
+      .right-column {
+        width: 100%;
+      }
+
+      .right-column {
+        @include flex-align-justify(center, center);
+
+        img {
+          width: 60%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    padding: 1.5rem;
+    width: 90.4%;
+    .wrapper-achievements {
+      .left-column {
+        .achievement {
+          .heading-achievement {
+            b {
+              font-size: 2rem;
+            }
+
+            img {
+              width: 1.8rem;
+            }
+          }
+
+          p {
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+}

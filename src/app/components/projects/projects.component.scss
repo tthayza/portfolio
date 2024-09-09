@@ -27,8 +27,9 @@
     .card {
       background-color: white;
       border-radius: 2rem;
-      width: fit-content;
-      height: fit-content;
+      width: 100%;
+      max-width: fit-content;
+      height: 45rem;
       padding: 2.6rem;
       display: flex;
       gap: 0.8rem;
@@ -75,8 +76,32 @@
       }
       img {
         border-radius: 2rem;
+        height: 20rem;
+        width: 40rem;
       }
     }
+  }
+}
+
+@media (max-width: 1109px) {
+  .projects {
+    padding: 2rem;
+  }
+  .card-listing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .wrapper-projects {
+    text-align: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 40rem;
+    margin: 10px 0;
   }
 }
 

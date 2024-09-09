@@ -3,7 +3,6 @@ $breakpoint-tablet: 768px;
 
 header {
   @include side-border;
-
   background-color: $mediumWhite;
   a img {
     width: 7.8rem;
