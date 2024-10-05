@@ -2,14 +2,14 @@
   <app-heading textContent="Jornada"></app-heading>
   <div class="wrapper-achievements">
     <div class="left-column">
-      <h3>Minha Jornada</h3>
+      <h3 class="{{ currentTheme }}">Minha Jornada</h3>
       <div class="achievement" *ngFor="let item of journeyItems">
         <div class="heading-achievement">
           <img src="{{ iconStar }}" />
-          <b>{{ item?.title }}</b>
+          <b class="{{ currentTheme }}">{{ item?.title }}</b>
         </div>
 
-        <p>{{ item?.comment }}</p>
+        <p class="{{ currentTheme }}">{{ item?.comment }}</p>
       </div>
     </div>
     <div class="right-column">

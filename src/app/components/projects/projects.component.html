@@ -1,14 +1,14 @@
 <section class="projects">
   <app-heading textContent="Projects"></app-heading>
   <div class="wrapper-projects">
-    <h3>
+    <h3 class="{{ currentTheme }}">
       Projects and <br />
       practice
     </h3>
     <div class="card-listing">
-      <div class="card" *ngFor="let project of projectsList">
-        <b>{{ project?.id }}</b>
-        <h5>{{ project?.title }}</h5>
+      <div class="card {{ currentTheme }}" *ngFor="let project of projectsList">
+        <b class="{{ currentTheme }}">{{ project?.id }}</b>
+        <h5 class="{{ currentTheme }}">{{ project?.title }}</h5>
         <div class="tags">
           @for (tag of project?.tags; track $index) {
 

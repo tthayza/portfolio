@@ -6,4 +6,9 @@ p {
   font-size: 1.4rem;
   color: $mediumGray;
   border-radius: 3.2rem;
+
+  &.dark {
+    border: 0.1rem solid $mediumYellow;
+    color: $mediumYellow;
+  }
 }

@@ -1,6 +1,7 @@
 @import "../../../styles.scss";
 .footer {
   @include side-border;
+
   padding: 2rem 6rem;
   h5 {
     font-size: 1.6rem;

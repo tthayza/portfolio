@@ -1,4 +1,4 @@
-<main class="banner">
+<main class="banner {{ currentTheme }}">
   <div class="infos">
     <app-heading textContent="Portfolio"></app-heading>
     <div class="name">
@@ -6,9 +6,10 @@
       <div class="retangulo canto-superior-direito"></div>
       <div class="retangulo canto-inferior-esquerdo"></div>
       <div class="retangulo canto-inferior-direito"></div>
-      <h1>Thayza Oliveira</h1>
+      <h1 class="{{ currentTheme }}">Thayza Oliveira</h1>
     </div>
-    <p>
+
+    <p class="{{ currentTheme }}">
       Com uma paixão por simplificar ideias complexas, meu background é focado
       em criar experiências digitais que elevam o padrão de interação, unindo
       criatividade e precisão técnica para entregar resultados impactantes.

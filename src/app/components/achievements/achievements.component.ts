@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { HeadingComponent } from '../heading/heading.component';
 import { NgFor } from '@angular/common';
+import { ETheme } from '../../enums/theme.enum';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-achievements',
@@ -10,7 +12,7 @@ import { NgFor } from '@angular/common';
   styleUrl: './achievements.component.scss',
 })
 export class AchievementsComponent {
-  iconStar = '../../../assets/star.png';
+  iconStar = '../../../assets/icon-star.png';
   womanImg = '../../../assets/vr-cuate.svg';
   journeyItems = [
     {
@@ -29,4 +31,12 @@ export class AchievementsComponent {
         'Conquistei minha vaga em um processo seletivo desafiador, superando mais de 13 mil candidatos e passando por testes de aptidão, vídeoentrevista e hackathon fullstack.',
     },
   ];
+
+  currentTheme!: ETheme;
+  constructor(private themeService: ThemeService) {}
+  ngOnInit() {
+    this.themeService.currentTheme$.subscribe((theme) => {
+      this.currentTheme = theme;
+    });
+  }
 }

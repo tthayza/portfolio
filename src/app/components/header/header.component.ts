@@ -1,5 +1,7 @@
 import { CommonModule, NgIf } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
+import { ThemeService } from '../../services/theme.service';
+import { ETheme } from '../../enums/theme.enum';
 
 @Component({
   selector: 'app-header',
@@ -12,11 +14,13 @@ export class HeaderComponent {
   headerElements = ['Página Inicial', 'Tecnologias', 'Projetos', 'Contato'];
   imgLogo = '../../../assets/t-logo-bg.png';
   menuHamburguer = '../../../assets/menu-light.png';
+  currentTheme!: ETheme;
+  currentIcon = '../../../assets/moon-light.svg';
 
   isMobile: boolean = false;
   showModal: boolean = false;
 
-  constructor() {
+  constructor(private themeService: ThemeService) {
     this.checkScreenSize();
   }
 
@@ -34,5 +38,31 @@ export class HeaderComponent {
 
   toggleMenu() {
     this.showModal = !this.showModal;
+  }
+
+  ngOnInit() {
+    this.themeService.currentTheme$.subscribe((theme) => {
+      this.currentTheme = theme;
+      this.updateIcons(theme);
+    });
+  }
+  updateIcons(theme: ETheme) {
+    if (theme === ETheme.DarkTheme) {
+      this.currentIcon = '../../../assets/sun-dark.svg';
+    } else {
+      this.currentIcon = '../../../assets/moon-light.svg';
+    }
+  }
+
+  public toggleTheme() {
+    if (this.currentTheme === 'light') {
+      this.currentTheme = ETheme.DarkTheme;
+      this.themeService.setDarkTheme();
+      this.updateIcons(ETheme.DarkTheme);
+    } else {
+      this.currentTheme = ETheme.LightTheme;
+      this.themeService.setLightTheme();
+      this.updateIcons(ETheme.LightTheme);
+    }
   }
 }

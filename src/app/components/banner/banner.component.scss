@@ -6,6 +6,9 @@
   @include flex-align-justify(center, space-evenly);
   background-color: $mediumWhite;
   animation: fromTop 2s forwards;
+  &.dark {
+    background-color: $darkGray;
+  }
 
   .infos {
     width: 60%;
@@ -15,7 +18,6 @@
 
     p {
       width: 100%;
-      color: #686665;
       font-size: 1.6rem;
       font-family: "Lato";
     }

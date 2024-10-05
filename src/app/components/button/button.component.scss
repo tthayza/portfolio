@@ -1,3 +1,4 @@
+@import "../../../styles.scss";
 button {
   color: white;
   background-color: #131212;
@@ -11,5 +12,10 @@ button {
     color: #efc356;
     transform: translateY(-3px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  &.dark {
+    background-color: gainsboro;
+    color: $darkGray;
   }
 }

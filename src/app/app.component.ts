@@ -5,6 +5,8 @@ import { BannerComponent } from './components/banner/banner.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { AchievementsComponent } from './components/achievements/achievements.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ThemeService } from './services/theme.service';
+import { ETheme } from './enums/theme.enum';
 
 @Component({
   selector: 'app-root',
@@ -22,4 +24,13 @@ import { FooterComponent } from './components/footer/footer.component';
 })
 export class AppComponent {
   title = 'portfolio';
+  currentTheme = ETheme.LightTheme;
+
+  constructor(private themeService: ThemeService) {}
+
+  ngOnInit() {
+    this.themeService.currentTheme$.subscribe((theme: ETheme) => {
+      this.currentTheme = theme;
+    });
+  }
 }

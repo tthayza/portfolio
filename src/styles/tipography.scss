@@ -6,6 +6,9 @@ h5,
 p {
   font-family: "Playfair Display";
   color: #333333;
+  &.dark {
+    color: $mediumWhite;
+  }
 }
 h1 {
   font-size: 6.1rem;
@@ -23,6 +26,9 @@ li,
 b,
 h5 {
   font-family: "Lato";
+  &.dark {
+    color: $mediumWhite;
+  }
 }
 
 b,
@@ -35,4 +41,7 @@ h5 {
 button {
   font-family: "Playfair Display";
   font-size: 1.4rem;
+  &.dark {
+    color: $mediumWhite;
+  }
 }

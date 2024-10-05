@@ -14,6 +14,9 @@
   height: 0.2rem;
   width: 3.2rem;
   background-color: #333333;
+  &.dark {
+    background-color: $mediumWhite;
+  }
 }
 @mixin side-border {
   margin-left: 6rem;

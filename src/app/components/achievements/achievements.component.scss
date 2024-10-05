@@ -21,6 +21,9 @@
 
           b {
             font-size: 2.4rem;
+            &.dark {
+              color: rgb(199, 199, 199);
+            }
           }
 
           img {

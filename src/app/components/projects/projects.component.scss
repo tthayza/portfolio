@@ -40,6 +40,10 @@
       animation: fadeInUp 0.5s ease-in forwards;
       opacity: 0;
 
+      &.dark {
+        background-color: rgb(71, 71, 71);
+      }
+
       &:nth-child(0) {
         animation-delay: 0.1s;
       }
@@ -70,6 +74,7 @@
       &:hover {
         transform: translateY(-5px);
       }
+
       .tags {
         @include alignment(center);
         gap: 0.8rem;

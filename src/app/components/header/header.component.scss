@@ -4,6 +4,9 @@ $breakpoint-tablet: 768px;
 header {
   @include side-border;
   background-color: $mediumWhite;
+  &.dark {
+    background-color: $darkGray;
+  }
   a img {
     width: 7.8rem;
     animation: fromLeft 1s forwards 0.4s;

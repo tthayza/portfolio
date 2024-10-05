@@ -1,0 +1,7 @@
+@import "../styles.scss";
+div {
+  background-color: $mediumWhite;
+  &.dark {
+    background-color: $darkGray;
+  }
+}
