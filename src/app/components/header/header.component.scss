@@ -2,6 +2,8 @@
 $breakpoint-tablet: 768px;
 
 header {
+  // @include flex-align-justify(center, space-between);
+  width: 100%;
   @include side-border;
   background-color: $mediumWhite;
   border-right: none;
@@ -38,6 +40,9 @@ header {
         }
       }
     }
+  }
+  .theme-toggle {
+    width: 6rem;
   }
 }
 
