@@ -4,6 +4,12 @@ $breakpoint-tablet: 768px;
 header {
   @include side-border;
   background-color: $mediumWhite;
+  border-right: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 10;
+
   &.dark {
     background-color: $darkGray;
   }
@@ -15,41 +21,32 @@ header {
     @include alignment(center);
     gap: 2rem;
     li {
-      font-size: 1.2rem;
+      font-size: 1.6rem;
       opacity: 0;
       transition: transform 0.3s ease;
       animation: fadeInUp 0.8s ease forwards;
-      &:nth-child(1) {
-        animation-delay: 0.1s;
+      text-transform: capitalize;
+      a {
+        .active {
+          text-decoration: underline;
+          font-weight: bold;
+        }
       }
-
-      &:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-
-      &:nth-child(3) {
-        animation-delay: 0.3s;
-      }
-      &:nth-child(4) {
-        animation-delay: 0.4s;
+      @for $n from 1 through 4 {
+        &:nth-child(#{$n}) {
+          animation-delay: #{$n * 0.1s};
+        }
       }
     }
   }
 }
 
 @media (max-width: $breakpoint-tablet) {
-  .menu-list {
-    display: none;
-  }
-
   .menu-toggle {
-    display: block;
-    background: none;
-    border: none;
     cursor: pointer;
 
     .hamburger-icon {
-      width: 25px;
+      width: 4rem;
       transition: all 0.3s ease;
 
       &::before,
@@ -57,7 +54,7 @@ header {
         content: "";
         width: 25px;
         height: 3px;
-        background-color: #333;
+        background-color: $darkGray;
         display: block;
         position: absolute;
         transition: all 0.3s ease;
@@ -93,7 +90,6 @@ header {
 
   ul {
     list-style: none;
-    padding: 0;
     display: flex;
     flex-direction: column;
 
@@ -102,21 +98,6 @@ header {
       display: block;
       opacity: 0;
       transition: transform 0.3s ease;
-      animation: fromLeft 0.1s ease-in forwards;
-      &:nth-child(1) {
-        animation-delay: 0.1s;
-      }
-
-      &:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-
-      &:nth-child(3) {
-        animation-delay: 0.3s;
-      }
-      &:nth-child(4) {
-        animation-delay: 0.4s;
-      }
 
       a {
         text-decoration: none;

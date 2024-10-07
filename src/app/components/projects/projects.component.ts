@@ -14,42 +14,55 @@ import { ThemeService } from '../../services/theme.service';
   styleUrl: './projects.component.scss',
 })
 export class ProjectsComponent {
+  hover = false;
   projectsList = [
     {
       id: '01',
-      title: 'Weather Page',
-      tags: ['React', 'CSS', 'JavaScript'],
-      image: '../../../assets/weatherpage.png',
-    },
-    {
-      id: '02',
       title: 'Rick&Morty',
       tags: ['Angular', 'SASS'],
       image: '../../../assets/rickmorty1.png',
+      summary:
+        'Consumo da API Rick&Morty onde são exibidas informações de personagens, localizações e episódios, além de conter a funcionalidade de favoritar e filtrar por meio de pesquisa esses elementos.',
+    },
+    {
+      id: '02',
+      title: 'Orange Portfólio',
+      tags: ['React', 'MUI', 'Tailwind'],
+      image: '../../../assets/orange1.png',
+      summary:
+        'Aplicação na qual é possível visualizar projetos de outras pessoas, publicar, editar, excluir e pesquisar seus próprios projetos e também pré-visualizar. Também conta com processo de cadastro e login com Google.',
     },
     {
       id: '03',
-      title: 'Lightning Adjusment',
-      tags: ['Angular', 'SASS', 'JavaScript'],
-      image: '../../../assets/lightningadjustment.png',
+      title: 'Weather Page',
+      tags: ['React', 'CSS', 'JavaScript'],
+      image: '../../../assets/weatherpage.png',
+      summary:
+        'Página Web que apresenta informações metereológicas atuais, e também a previsão para os próximos dias através do consumo de duas APIs.',
     },
     {
       id: '04',
-      title: 'Destino Revelado',
-      tags: ['HTML', 'CSS', 'JavaScript'],
-      image: '../../../assets/destino-revelado.png',
+      title: 'Lightning Adjusment',
+      tags: ['React', 'CSS', 'JavaScript'],
+      image: '../../../assets/lightningadjustment.png',
+      summary:
+        'Aplicação em que se pode manipular a cor, brilho e contraste dinamicamente em tempo real.',
     },
     {
       id: '05',
-      title: 'Forms Cartão de Crédito',
-      tags: ['React', 'CSS', 'JavaScript'],
-      image: '../../../assets/creditcard01.png',
+      title: 'Destino Revelado',
+      tags: ['HTML', 'CSS', 'JavaScript'],
+      image: '../../../assets/destino-revelado.png',
+      summary:
+        'Nessa aplicação, através do envio de uma pergunta, seu destino é revelado por meio de uma resposta exibida na tela!',
     },
     {
       id: '06',
-      title: 'Orange Portfólio',
-      tags: ['React', 'MUI', 'Tailwind', 'Node'],
-      image: '../../../assets/orange1.png',
+      title: 'Forms Cartão de Crédito',
+      tags: ['React', 'CSS', 'JavaScript'],
+      image: '../../../assets/creditcard01.png',
+      summary:
+        'Essa aplicação exibe o cartão de crédito sendo preenchido simultaneamente ao digitar os dados!',
     },
   ];
 

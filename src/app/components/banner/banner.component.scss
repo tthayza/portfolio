@@ -1,11 +1,14 @@
 @import "../../../styles.scss";
 .banner {
-  padding: 2rem 4rem;
-  margin-right: 3.1% !important;
+  padding-top: 8rem;
+  padding-bottom: 2rem;
   @include side-border;
   @include flex-align-justify(center, space-evenly);
   background-color: $mediumWhite;
   animation: fromTop 2s forwards;
+  @media (min-width: 288px) and (max-width: 1400px) {
+    margin-top: 7.8rem;
+  }
   &.dark {
     background-color: $darkGray;
   }
@@ -27,7 +30,6 @@
       width: fit-content;
       height: fit-content;
       padding: 1.8rem;
-      border: 2px solid #333;
       border: solid #686665 0.2rem;
 
       h3 {
@@ -73,6 +75,7 @@
     padding: 2rem;
     border: solid #686665 0.09rem;
     @include flex-align-justify(center, center);
+    margin: 10rem 0;
 
     img {
       border-radius: inherit;

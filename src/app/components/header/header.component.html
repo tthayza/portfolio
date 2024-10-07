@@ -1,10 +1,18 @@
-<header class="{{ currentTheme }}">
+<header class="{{ currentTheme }}" id="página-inicial">
   <a>
     <img src="{{ imgLogo }}" />
   </a>
   <ul class="menu-list" *ngIf="!isMobile">
     @for (item of headerElements; track 0) {
-    <li class="{{ currentTheme }}">{{ item }}</li>
+    <li class="{{ currentTheme }}">
+      <a
+        [ngClass]="{ active: activeSection === formatItem(item) }"
+        href="#{{ formatItem(item) }}"
+        (click)="scrollToSection(formatItem(item))"
+      >
+        {{ item }}
+      </a>
+    </li>
     }
   </ul>
   <button class="menu-toggle" *ngIf="isMobile" (click)="toggleMenu()">
@@ -17,10 +25,30 @@
   >
     <button class="close-button" (click)="toggleMenu()">&times;</button>
     <ul>
-      <li><a routerLink="/" class="{{ currentTheme }}">Home</a></li>
-      <li><a routerLink="/about" class="{{ currentTheme }}">About</a></li>
-      <li><a routerLink="/services" class="{{ currentTheme }}">Services</a></li>
-      <li><a routerLink="/contact" class="{{ currentTheme }}">Contact</a></li>
+      <li>
+        <a
+          [ngClass]="{ active: activeSection === 'pagina-inicial' }"
+          href="#pagina-inicial"
+          (click)="scrollToSection('pagina-inicial')"
+          >página inicial</a
+        >
+      </li>
+      <li>
+        <a
+          [ngClass]="{ active: activeSection === 'projetos' }"
+          href="#projetos"
+          (click)="scrollToSection('projetos')"
+          >projetos</a
+        >
+      </li>
+      <li>
+        <a
+          [ngClass]="{ active: activeSection === 'jornada' }"
+          href="#jornada"
+          (click)="scrollToSection('jornada')"
+          >jornada</a
+        >
+      </li>
     </ul>
   </div>
   <button class="theme-toggle" (click)="toggleTheme()">

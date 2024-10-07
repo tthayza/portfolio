@@ -1,5 +1,6 @@
 @import "../styles.scss";
 div {
+  overflow: hidden;
   background-color: $mediumWhite;
   &.dark {
     background-color: $darkGray;

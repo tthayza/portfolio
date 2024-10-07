@@ -47,10 +47,11 @@
     }
   }
 
-  @media (min-width: 288px) and (max-width: 1024px) {
+  @media (max-width: 1024px) {
     align-items: center;
-    text-align: center;
-
+    // text-align: center;
+    padding: 1.5rem;
+    width: 90.4%;
     .journey {
       padding: 1rem;
       margin-right: 3% !important;
@@ -61,15 +62,28 @@
 
     .wrapper-achievements {
       flex-direction: column;
-      align-items: center;
       margin-top: 1.6rem;
 
       .left-column {
+        h3 {
+          text-align: center;
+        }
         .achievement {
           flex-direction: column;
-          @include justifying(center);
           width: 100%;
+
+          .heading-achievement {
+            b {
+              font-size: 2rem;
+            }
+
+            img {
+              width: 1.8rem;
+            }
+          }
+
           p {
+            font-size: 1.4rem;
             text-align: start;
             width: 80%;
           }
@@ -86,30 +100,6 @@
 
         img {
           width: 60%;
-        }
-      }
-    }
-  }
-
-  @media (max-width: 1024px) {
-    padding: 1.5rem;
-    width: 90.4%;
-    .wrapper-achievements {
-      .left-column {
-        .achievement {
-          .heading-achievement {
-            b {
-              font-size: 2rem;
-            }
-
-            img {
-              width: 1.8rem;
-            }
-          }
-
-          p {
-            font-size: 1.4rem;
-          }
         }
       }
     }

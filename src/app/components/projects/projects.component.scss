@@ -1,14 +1,24 @@
 @import "../../../styles.scss";
+
 .projects {
   @include side-border;
-  display: flex;
+  @include alignment(baseline);
   flex-direction: column;
-  align-items: first baseline;
   padding: 2rem 10rem;
+  @media (max-width: 1024px) {
+    align-items: center;
+    text-align: center;
+    margin-right: 0.5% !important;
+    border-right: rgba(104, 102, 101, 0.2) 0.1rem solid;
+  }
+  @media (max-width: 1280px) {
+  }
+
   .wrapper-projects {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    width: 100%;
   }
 
   .card-listing {
@@ -16,6 +26,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, auto);
     gap: 2rem;
+    margin: 0 auto;
 
     @media (max-width: 1024px) {
       display: flex;
@@ -25,17 +36,17 @@
     }
 
     .card {
+      position: relative;
       background-color: white;
       border-radius: 2rem;
       width: 100%;
-      max-width: fit-content;
       height: 45rem;
       padding: 2.6rem;
       display: flex;
-      gap: 0.8rem;
       flex-direction: column;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transform: translateY(20px);
+      gap: 0.8rem;
+      box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.1);
+      transform: translateY(2rem);
       transition: transform 0.3s ease;
       animation: fadeInUp 0.5s ease-in forwards;
       opacity: 0;
@@ -43,32 +54,10 @@
       &.dark {
         background-color: rgb(71, 71, 71);
       }
-
-      &:nth-child(0) {
-        animation-delay: 0.1s;
-      }
-
-      &:nth-child(1) {
-        animation-delay: 0.2s;
-      }
-
-      &:nth-child(2) {
-        animation-delay: 0.3s;
-      }
-
-      &:nth-child(3) {
-        animation-delay: 0.4s;
-      }
-
-      &:nth-child(4) {
-        animation-delay: 0.5s;
-      }
-
-      &:nth-child(5) {
-        animation-delay: 0.6s;
-      }
-      &:nth-child(6) {
-        animation-delay: 0.7s;
+      @for $n from 1 through 7 {
+        &:nth-child(#{$n}) {
+          animation-delay: #{$n * 0.1s};
+        }
       }
 
       &:hover {
@@ -79,34 +68,65 @@
         @include alignment(center);
         gap: 0.8rem;
       }
-      img {
-        border-radius: 2rem;
+
+      figure {
         height: 20rem;
-        width: 40rem;
+        width: 30rem;
+        @include flex-align-justify(center, center);
+
+        img {
+          border-radius: 2rem;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .card-overlay {
+        @include flex-align-justify(center, center);
+        border-radius: 2rem;
+        flex-direction: column;
+        gap: 2rem;
+        left: 0;
+        top: 0;
+        padding: 0 2rem;
+        position: absolute;
+        width: 100%;
+        height: 45rem;
+        background-color: rgba(0, 0, 0, 0.9);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        text-align: center;
+
+        &:hover {
+          opacity: 1;
+        }
       }
     }
   }
 }
 
-@media (max-width: 1109px) {
+@media (min-width: 288px) and (max-width: 1400px) {
   .projects {
     padding: 2rem;
   }
-  .card-listing {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
 
-  .wrapper-projects {
-    text-align: center;
+  .card-listing {
+    flex-direction: column;
+    @include alignment(center);
   }
 
   .card {
-    width: 100%;
-    max-width: 40rem;
-    margin: 10px 0;
+    @include flex-align-justify(center, center);
+    flex-direction: column;
+    width: 90% !important;
+    margin: 0 auto;
+
+    figure {
+      border: solid 4px palegoldenrod;
+      width: 110% !important;
+      img {
+        width: 100%;
+      }
+    }
   }
 }
 

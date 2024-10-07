@@ -1,10 +1,11 @@
-<section class="projects">
-  <app-heading textContent="Projects"></app-heading>
+<section
+  class="projects"
+  (mouseenter)="hover = true"
+  (mouseleave)="hover = false"
+>
+  <app-heading textContent="Projetos"></app-heading>
   <div class="wrapper-projects">
-    <h3 class="{{ currentTheme }}">
-      Projects and <br />
-      practice
-    </h3>
+    <h3 class="{{ currentTheme }}">Projetos e práticas</h3>
     <div class="card-listing">
       <div class="card {{ currentTheme }}" *ngFor="let project of projectsList">
         <b class="{{ currentTheme }}">{{ project?.id }}</b>
@@ -15,8 +16,13 @@
           <app-tag [tag]="tag"></app-tag>
           }
         </div>
-        <img src="{{ project?.image }}" />
-        <app-button textBtn="Ver projeto"></app-button>
+        <figure>
+          <img src="{{ project?.image }}" />
+        </figure>
+        <div class="card-overlay">
+          <h6>{{ project.summary }}</h6>
+          <app-button textBtn="Ver projeto"></app-button>
+        </div>
       </div>
     </div>
   </div>

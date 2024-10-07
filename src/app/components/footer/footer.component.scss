@@ -2,8 +2,11 @@
 .footer {
   @include side-border;
 
-  padding: 2rem 6rem;
+  padding: 2rem;
   h5 {
     font-size: 1.6rem;
+    &:nth-child(2) {
+      text-align: right;
+    }
   }
 }
