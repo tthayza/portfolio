@@ -2,7 +2,7 @@
 $breakpoint-tablet: 768px;
 
 header {
-  // @include flex-align-justify(center, space-between);
+  @include flex-align-justify(center, space-between);
   width: 100%;
   @include side-border;
   background-color: $mediumWhite;

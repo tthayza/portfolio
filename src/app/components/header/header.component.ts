@@ -14,7 +14,7 @@ import { ThemeService } from '../../services/theme.service';
 export class HeaderComponent implements OnInit {
   isMobile: boolean = false;
   showModal: boolean = false;
-  headerElements: string[] = ['página inicial', 'projetos', 'jornada'];
+  headerElements: string[] = ['portfolio', 'projetos', 'jornada'];
   activeSection!: string;
   imgLogo = '../../../assets/t-logo-bg.png';
   menuHamburguer = '../../../assets/menu-light.png';
