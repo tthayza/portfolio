@@ -23,6 +23,7 @@ export class ProjectsComponent {
       image: '../../../assets/rickmorty1.png',
       summary:
         'Consumo da API Rick&Morty onde são exibidas informações de personagens, localizações e episódios, além de conter a funcionalidade de favoritar e filtrar por meio de pesquisa esses elementos.',
+      link: 'https://rick-and-morty-one-eta.vercel.app/homepage',
     },
     {
       id: '02',
@@ -31,6 +32,7 @@ export class ProjectsComponent {
       image: '../../../assets/orange1.png',
       summary:
         'Aplicação na qual é possível visualizar projetos de outras pessoas, publicar, editar, excluir e pesquisar seus próprios projetos e também pré-visualizar. Também conta com processo de cadastro e login com Google.',
+      link: 'https://orange-portfolio-djdm.onrender.com/',
     },
     {
       id: '03',
@@ -39,6 +41,7 @@ export class ProjectsComponent {
       image: '../../../assets/weatherpage.png',
       summary:
         'Página Web que apresenta informações metereológicas atuais, e também a previsão para os próximos dias através do consumo de duas APIs.',
+      link: 'https://weather-page-ctp2wwebn-tthayzas-projects.vercel.app/',
     },
     {
       id: '04',
@@ -47,6 +50,7 @@ export class ProjectsComponent {
       image: '../../../assets/lightningadjustment.png',
       summary:
         'Aplicação em que se pode manipular a cor, brilho e contraste dinamicamente em tempo real.',
+      link: 'https://bora-codar-seven.vercel.app/',
     },
     {
       id: '05',
@@ -55,6 +59,7 @@ export class ProjectsComponent {
       image: '../../../assets/destino-revelado.png',
       summary:
         'Nessa aplicação, através do envio de uma pergunta, seu destino é revelado por meio de uma resposta exibida na tela!',
+      link: 'https://destino-revelado.vercel.app/?vercelToolbarCode=OhqNfnjTVxz6awk',
     },
     {
       id: '06',
@@ -63,6 +68,7 @@ export class ProjectsComponent {
       image: '../../../assets/creditcard01.png',
       summary:
         'Essa aplicação exibe o cartão de crédito sendo preenchido simultaneamente ao digitar os dados!',
+      link: 'https://credit-card-one-chi.vercel.app/',
     },
   ];
 

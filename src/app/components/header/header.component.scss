@@ -3,13 +3,12 @@ $breakpoint-tablet: 768px;
 
 header {
   @include flex-align-justify(center, space-between);
-  width: 100%;
+  width: 100vw;
+  margin: 0;
+
   @include side-border;
   background-color: $mediumWhite;
-  border-right: none;
   position: fixed;
-  left: 0;
-  right: 0;
   z-index: 10;
 
   &.dark {
@@ -28,6 +27,10 @@ header {
       transition: transform 0.3s ease;
       animation: fadeInUp 0.8s ease forwards;
       text-transform: capitalize;
+      transition: color 0.3s ease;
+      &:hover {
+        color: #efc356;
+      }
       a {
         .active {
           text-decoration: underline;
@@ -42,7 +45,13 @@ header {
     }
   }
   .theme-toggle {
-    width: 6rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 99rem;
+    &:hover {
+      background-color: #efc356;
+      transform: rotate(20deg);
+    }
   }
 }
 

@@ -1,6 +1,5 @@
 @import "../../../styles.scss";
 .banner {
-  padding-top: 8rem;
   padding-bottom: 2rem;
   @include side-border;
   @include flex-align-justify(center, space-evenly);
@@ -12,7 +11,6 @@
   &.dark {
     background-color: $darkGray;
   }
-
   .infos {
     width: 60%;
     @include justifying(space-between);
@@ -66,16 +64,30 @@
         right: -8px;
       }
     }
+    .social-container {
+      @include alignment(center);
+      gap: 1.2rem;
+
+      a img {
+        transition: ease 0.2s;
+
+        &:hover {
+          transform: scale(1.2);
+          filter: brightness(1.5);
+          transition: ease 0.2s;
+        }
+      }
+    }
   }
 
   figure {
     border-radius: 50%;
-    width: 450px;
-    height: 550px;
-    padding: 2rem;
+    width: 400px;
+    height: 500px;
+    padding: 0.6rem;
     border: solid #686665 0.09rem;
     @include flex-align-justify(center, center);
-    margin: 10rem 0;
+    margin: 2rem 0;
 
     img {
       border-radius: inherit;

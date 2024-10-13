@@ -1,5 +1,5 @@
 <section
-  class="projects"
+  class="projects {{ currentTheme }}"
   (mouseenter)="hover = true"
   (mouseleave)="hover = false"
 >
@@ -21,7 +21,9 @@
         </figure>
         <div class="card-overlay">
           <h6>{{ project.summary }}</h6>
-          <app-button textBtn="Ver projeto"></app-button>
+          <a href="{{ project.link }}" target="_blank">
+            <app-button textBtn="Ver projeto"></app-button>
+          </a>
         </div>
       </div>
     </div>

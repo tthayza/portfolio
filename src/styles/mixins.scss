@@ -19,14 +19,12 @@
   }
 }
 @mixin side-border {
-  margin-left: 3rem;
-  margin-right: 4.6%;
-  // border-left: rgba(104, 102, 101, 0.2) 0.1rem solid; // Borda esquerda
-  // border-right: rgba(104, 102, 101, 0.2) 0.1rem solid; // Borda direita
-  @media (min-width: 288px) and (max-width: 1400px) {
-    border-left: none;
-    border-right: none;
-  }
+  // margin-left: 3rem;
+  // margin-right: 4.6%;
+  // @media (min-width: 288px) and (max-width: 1400px) {
+  //   border-left: none;
+  //   border-right: none;
+  // }
   padding: 0 6.4rem;
   @include flex-align-justify(center, space-between);
   position: relative;
@@ -39,5 +37,16 @@
     height: 0.2rem;
     background-color: rgba(104, 102, 101, 0.2);
     z-index: 1;
+  }
+}
+
+@mixin section {
+  display: flex;
+  flex-direction: column;
+  align-items: first baseline;
+  padding: 2rem 10rem;
+  background-color: #f9f4f0;
+  &.dark {
+    background-color: #333333;
   }
 }
