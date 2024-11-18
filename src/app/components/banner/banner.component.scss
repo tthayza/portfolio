@@ -1,12 +1,11 @@
 @import "../../../styles.scss";
 .banner {
-  padding-bottom: 2rem;
   @include side-border;
   @include flex-align-justify(center, space-evenly);
   background-color: $mediumWhite;
   animation: fromTop 2s forwards;
-  @media (min-width: 288px) and (max-width: 1400px) {
-    margin-top: 7.8rem;
+  @media (min-width: 288px) and (max-width: 2560px) {
+    margin-top: 2rem;
   }
   &.dark {
     background-color: $darkGray;

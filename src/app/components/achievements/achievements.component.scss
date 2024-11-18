@@ -12,6 +12,7 @@
       width: 70%;
 
       .achievement {
+        margin-bottom: 2rem;
         .heading-achievement {
           @include alignment(center);
           gap: 0.8rem;
@@ -67,6 +68,7 @@
         .achievement {
           flex-direction: column;
           width: 100%;
+          margin-bottom: 2rem;
 
           .heading-achievement {
             b {

@@ -3,12 +3,12 @@ $breakpoint-tablet: 768px;
 
 header {
   @include flex-align-justify(center, space-between);
-  width: 100vw;
+  width: 100%;
   margin: 0;
+  padding: 0 2rem;
 
   @include side-border;
   background-color: $mediumWhite;
-  position: fixed;
   z-index: 10;
 
   &.dark {
