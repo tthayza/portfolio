@@ -41,7 +41,7 @@ export class ProjectsComponent {
       image: '../../../assets/weatherpage.png',
       summary:
         'Página Web que apresenta informações metereológicas atuais, e também a previsão para os próximos dias através do consumo de duas APIs.',
-      link: 'https://weather-page-ctp2wwebn-tthayzas-projects.vercel.app/',
+      link: 'https://weather-page-ten.vercel.app/',
     },
     {
       id: '04',
