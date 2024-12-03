@@ -21,7 +21,7 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              "src/t-logo-bg.png",
+              "src/t-logo-bg-light.png",
               "src/assets"
             ],
             "styles": [
