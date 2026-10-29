@@ -4,7 +4,7 @@ Este projeto reúne uma seleção dos principais trabalhos que desenvolvi e conq
 
 🔗 [Acesse o portfólio aqui](https://portfolio-phi-eight-46.vercel.app/)
 
-![Preview](preview.png)
+![Preview](preview-portfolio.png)
 
 ## 📋 Visão Geral
 
@@ -45,7 +45,7 @@ O portfólio foi desenvolvido com foco em boas práticas de desenvolvimento, ace
 ## 📈 Melhorias Futuras
 
 - **Adicionar novos projetos e funcionalidades**: Continuar expandindo o portfólio para refletir novas habilidades e experiências.
-- **Implementar melhorias de performance e animações interativas**: Tornar a navegação mais fluida e aprimorar a experiência do usuário com transições suaves.
+- **Implementar melhorias de performance e animações interativas**: Aprimorar a experiência do usuário com transições suaves.
 
 ## 📝 Licença
 
