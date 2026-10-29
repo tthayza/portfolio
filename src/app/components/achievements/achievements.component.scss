@@ -3,102 +3,313 @@
 .journey {
   @include side-border;
   @include section;
+  padding-top: 3rem;
+  padding-bottom: 6rem;
+  overflow: hidden;
 
-  .wrapper-achievements {
-    @include justifying(space-between);
+  .journey-header {
+    margin-bottom: 2rem;
     width: 100%;
 
-    .left-column {
-      width: 70%;
+    h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 4.2rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      color: #333333;
 
-      .achievement {
-        margin-bottom: 2rem;
-        .heading-achievement {
-          @include alignment(center);
-          gap: 0.8rem;
-
-          b {
-            font-size: 2.4rem;
-            &.dark {
-              color: rgb(199, 199, 199);
-            }
-          }
-
-          img {
-            width: 2rem;
-          }
-        }
-
-        p {
-          font-size: 1.6rem;
-          font-family: "Lato";
-        }
+      &.dark {
+        color: $mediumWhite;
       }
     }
 
-    .right-column {
-      @include flex-align-justify(center, center);
-      width: 35%;
-      img {
-        width: 30rem;
+    .subtitle {
+      font-family: "Lato", sans-serif;
+      font-size: 1.6rem;
+      color: #686665;
+
+      &.dark {
+        color: #b0b0b0;
       }
     }
   }
 
-  @media (max-width: 1024px) {
-    align-items: center;
-    padding: 1.5rem;
-    width: 90.4%;
-    .journey {
-      padding: 1rem;
-      margin-right: 3% !important;
-      flex-direction: column;
+  .roadmap-track-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 3rem auto 0 auto;
+
+    // SVG Undulating Ribbon Track
+    .wave-svg-wrapper {
+      position: absolute;
+      top: -55px;
+      left: 0;
       width: 100%;
-      max-width: 30rem;
+      height: 160px;
+      pointer-events: none;
+      z-index: 1;
+
+      .wave-svg {
+        width: 100%;
+        height: 100%;
+
+        .track-border {
+          stroke: #d8d1c7;
+          transition: stroke 0.3s ease;
+
+          &.dark {
+            stroke: #555555;
+          }
+        }
+
+        .track-fill {
+          stroke: #eae4dc;
+          transition: stroke 0.3s ease;
+
+          &.dark {
+            stroke: #333333;
+          }
+        }
+
+        .track-dash {
+          stroke: #beb5a8;
+          transition: stroke 0.3s ease;
+
+          &.dark {
+            stroke: #666666;
+          }
+        }
+      }
     }
 
-    .wrapper-achievements {
-      flex-direction: column;
-      margin-top: 1.6rem;
+    // Grid containing the 4 milestone columns
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2.2rem;
+      position: relative;
+      z-index: 2;
+      margin-top: 70px;
 
-      .left-column {
-        h3 {
-          text-align: center;
-        }
-        .achievement {
-          flex-direction: column;
-          width: 100%;
-          margin-bottom: 2rem;
+      .milestone-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
 
-          .heading-achievement {
-            b {
-              font-size: 2rem;
-            }
+        // Circular Number Node (resting right at the wave trough)
+        .badge-node {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 4;
+          margin-bottom: -24px;
+          position: relative;
+          background-color: #333333;
+          color: #ffffff;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+          border: 3px solid #ffffff;
+          transition: transform 0.25s ease, background-color 0.3s ease;
 
-            img {
-              width: 1.8rem;
-            }
+          &.dark {
+            background-color: #efc356;
+            color: #333333;
+            box-shadow: 0 4px 14px rgba(239, 195, 86, 0.35);
+            border: 3px solid #262626;
           }
 
-          p {
+          span {
+            font-family: "Lato", sans-serif;
             font-size: 1.4rem;
-            text-align: start;
-            width: 80%;
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: -0.5px;
+          }
+        }
+
+        // Soft rounded card tucked under badge
+        .milestone-card {
+          width: 100%;
+          min-height: 280px;
+          border-radius: 24px;
+          padding: 3.8rem 2rem 2.6rem 2rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          z-index: 2;
+          background-color: #ffffff;
+          border: 1px solid rgba(0, 0, 0, 0.05);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+          transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+
+          &:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 36px rgba(0, 0, 0, 0.09);
+
+            & + .badge-node,
+            ~ .badge-node {
+              transform: scale(1.08);
+            }
+          }
+
+          &.dark {
+            background-color: #262626;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+            &:hover {
+              box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+            }
+          }
+
+          .m-tag {
+            font-family: "Lato", sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-bottom: 0.9rem;
+            color: #686665;
+
+            &.dark {
+              color: #efc356;
+            }
+          }
+
+          .m-title {
+            font-family: "Playfair Display", serif;
+            font-size: 2.1rem;
+            font-style: italic;
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 1.2rem;
+            color: #333333;
+
+            &.dark {
+              color: #f9f4f0;
+            }
+          }
+
+          .m-divider {
+            width: 3.4rem;
+            height: 0.15rem;
+            background-color: #dcd5cc;
+            margin-bottom: 1.4rem;
+            border-radius: 2px;
+
+            &.dark {
+              background-color: #efc356;
+            }
+          }
+
+          .m-comment {
+            font-family: "Lato", sans-serif;
+            font-size: 1.35rem;
+            line-height: 1.6;
+            color: #555555;
+
+            &.dark {
+              color: #cccccc;
+            }
           }
         }
       }
+    }
+  }
 
-      .left-column,
-      .right-column {
-        width: 100%;
+  // RESPONSIVE BREAKPOINTS
+  @media (max-width: 1080px) {
+    padding: 2rem 4rem;
+
+    .roadmap-track-container {
+      .cards-grid {
+        gap: 1.4rem;
+
+        .milestone-column {
+          .milestone-card {
+            padding: 3.4rem 1.4rem 2.2rem 1.4rem;
+
+            .m-title {
+              font-size: 1.8rem;
+            }
+
+            .m-comment {
+              font-size: 1.25rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    padding: 2rem 2.5rem;
+
+    .journey-header {
+      h3 {
+        font-size: 3.4rem;
+      }
+      .subtitle {
+        font-size: 1.4rem;
+      }
+    }
+
+    .roadmap-track-container {
+      .wave-svg-wrapper {
+        display: none;
       }
 
-      .right-column {
-        @include flex-align-justify(center, center);
+      .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.4rem;
+        margin-top: 2rem;
 
-        img {
-          width: 60%;
+        .milestone-column {
+          .badge-node {
+            width: 44px;
+            height: 44px;
+            margin-bottom: -22px;
+
+            span {
+              font-size: 1.3rem;
+            }
+          }
+
+          .milestone-card {
+            padding: 3.2rem 1.8rem 2.2rem 1.8rem;
+          }
         }
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 2rem 1.5rem;
+
+    .journey-header {
+      text-align: center;
+
+      h3 {
+        font-size: 2.8rem;
+      }
+
+      .subtitle {
+        font-size: 1.3rem;
+      }
+    }
+
+    .roadmap-track-container {
+      margin-top: 1.5rem;
+
+      .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 2.6rem;
+        margin-top: 1rem;
       }
     }
   }
